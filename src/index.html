@@ -68,7 +68,7 @@
 
             <div class="login text-lg pt-3 flex gap-4 tracking-widest relative">
                 <i class="fa-solid fa-xmark absolute translate-x-2 text-white w-6 h-6 text-center place-content-center bg-black rounded-full z-30 translate-y-6 hidden" id="x2"></i>
-                <div id="store" class="hidden absolute translate-y-5 text-gray-500 flex flex-col w-64 gap-4
+                <div id="store" class="hidden absolute translate-y-5 text-gray-500 flex-col w-64 gap-4
                  bg-white overflow-scroll rounded-lg h-96 p-1">
 
                 </div>
@@ -223,10 +223,10 @@
         let account = document.getElementById("acc")
         let inp1 = document.getElementById("inp1")
         let inp2 = document.getElementById("inp2")
-        let x3 = document.getElementById("x3")
+        let x_mark3 = document.getElementById("x3")
         let sumit = document.getElementById("submit")
         let nav_cart = document.getElementById("nav_cart")
-        let x2 = document.getElementById("x2")
+        let x_mark2 = document.getElementById("x2")
         let store = document.getElementById("store")
         let cartBtn = document.getElementById("cart")
         let product_page = document.getElementById("product_page")
@@ -238,8 +238,8 @@
         let result_div = document.getElementById("result_div")
         let bar = document.getElementById("bar")
         let left_sec = document.getElementById("left_sec")
-        let x = document.getElementById("x")
-        x.addEventListener("click", () => {
+        let x_mark1 = document.getElementById("x")
+        x_mark1.addEventListener("click", () => {
             left_sec.style.left = "-100%"
         })
         bar.addEventListener("click", () => {
@@ -251,10 +251,10 @@
 
         nav_cart.addEventListener("click",()=>{
             store.style.display = "block"
-            x2.style.display = "block"
+            x_mark2.style.display = "block"
         })
-        x2.addEventListener("click",()=>{
-            x2.style.display = "none"
+        x_mark2.addEventListener("click",()=>{
+            x_mark2.style.display = "none"
             store.style.display ="none"
         })
 
@@ -266,7 +266,7 @@
             inp1.value = ""
             inp2.value =""
         })
-        x3.addEventListener("click",()=>{
+        x_mark3.addEventListener("click",()=>{
             loginform.style.top = "-100%"
             inp1.value = ""
             inp2.value =""
