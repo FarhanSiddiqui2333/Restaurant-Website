@@ -68,7 +68,7 @@
 
             <div class="login text-lg pt-3 flex gap-4 tracking-widest relative">
                 <i class="fa-solid fa-xmark absolute translate-x-2 text-white w-6 h-6 text-center place-content-center bg-black rounded-full z-30 translate-y-6 hidden" id="x2"></i>
-                <div id="store" class="hidden absolute translate-y-5 text-gray-500 flex flex-col w-64 gap-4
+                <div id="store" class="hidden absolute translate-y-5 text-gray-500 flex-col w-64 gap-4
                  bg-white overflow-scroll rounded-lg h-96 p-1">
 
                 </div>
@@ -255,7 +255,7 @@
         })
         x2.addEventListener("click",()=>{
             x2.style.display = "none"
-            store.style.display ="none"
+            store.style.display ="flex"
         })
 
         account.addEventListener("click",()=>{
