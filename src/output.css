@@ -1,4 +1,6 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -8,19 +10,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -28,28 +30,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 ::backdrop {
@@ -62,19 +64,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -82,28 +84,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 /*
@@ -153,9 +155,9 @@ html,
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
   /* 3 */
-  font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -200,7 +202,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /*
@@ -489,7 +491,8 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -841,7 +844,7 @@ video {
 }
 
 
-#container .prod{
+#container .prod {
   height: max-content;
   border: 1px solid rgb(218, 218, 218);
   box-shadow: 0px 4px 5px rgb(219, 219, 219);
@@ -849,15 +852,18 @@ video {
   overflow: hidden;
   width: 300px;
 }
-#container .prod img{
+
+#container .prod img {
   width: 100%;
 }
-#container .prod div{
+
+#container .prod div {
   border: none;
-  padding:15px;
+  padding: 15px;
   background-color: rgb(22, 28, 41);
 }
-#container .prod div button{
+
+#container .prod div button {
   background-color: rgba(255, 68, 0, 0.815);
   padding: 5px 12px;
   border-radius: 5px;
@@ -867,12 +873,14 @@ video {
   left: 100%;
   translate: -100% 0%;
 }
-.hero{
- background-image: url(bgedit.jpg);
- background-size: cover;
- box-shadow: 0px -30px 20px rgb(255, 255, 255) inset;
+
+.hero {
+  background-image: url(bgedit.jpg);
+  background-size: cover;
+  box-shadow: 0px -30px 20px rgb(255, 255, 255) inset;
 }
-#container .prod div p{
+
+#container .prod div p {
   font-weight: 700;
   font-size: 18px;
   height: 40px;
@@ -883,14 +891,16 @@ video {
   color: white;
   margin-top: 5px;
 }
-#container .prod div span{
+
+#container .prod div span {
   background-color: white;
   padding: 1px 12px;
   border-radius: 5px;
   font-size: 12px;
   font-weight: 700;
 }
-.slider{
+
+.slider {
   animation: slider 12s linear infinite;
   top: 50%;
   translate: 0% -50%;
@@ -898,61 +908,74 @@ video {
   height: 1100px;
   width: 1100px;
 }
-.slider img{
+
+.slider img {
   scale: 1.5;
-  filter:drop-shadow(0px 0px 10px rgba(168, 168, 168, 0.301));
+  filter: drop-shadow(0px 0px 10px rgba(168, 168, 168, 0.301));
 }
 
-@keyframes slider{
-  0%{
+@keyframes slider {
+  0% {
     rotate: 90deg;
   }
-  5%{
+
+  5% {
     rotate: 170deg;
   }
-  20%{
+
+  20% {
     rotate: 180deg;
   }
-  30%{
+
+  30% {
     rotate: 190deg;
   }
-  35%{
+
+  35% {
     rotate: 260deg;
   }
-  40%{
+
+  40% {
     rotate: 270deg;
   }
-  55%{
+
+  55% {
     rotate: 280deg;
   }
-  60%{
+
+  60% {
     rotate: 350deg;
   }
-  75%{
+
+  75% {
     rotate: 360deg;
   }
-  80%{
+
+  80% {
     rotate: 370deg;
   }
-  85%{
+
+  85% {
     rotate: 440deg;
   }
-  95%{
+
+  95% {
     rotate: 445deg;
   }
-  100%{
+
+  100% {
     rotate: 450deg;
   }
-  
+
 }
 
-.content div .h2{
+.content div .h2 {
   height: 100px;
   width: min-content;
   animation: txt 3s linear infinite 1s;
 }
 
-.content div h4 span{
+.content div h4 span {
   display: block;
   position: relative;
   line-height: 24px;
@@ -960,31 +983,34 @@ video {
   animation: anim4 12s steps(4) infinite 1s;
 }
 
-.content div .h2 span{
+.content div .h2 span {
   display: block;
   position: relative;
   line-height: 100px;
   top: 0px;
   animation: anim3 12s steps(4) infinite 1s;
 }
+
 @keyframes anim3 {
-  to{
+  to {
     top: -400px;
   }
 }
+
 @keyframes anim4 {
-  to{
+  to {
     top: -96px;
   }
 }
+
 @keyframes txt {
   40%,
-  60%{
+  60% {
     width: calc(100% + 35px);
   }
 }
 
-.product_page{
+.product_page {
   background-image: url(bgImg\ \(2\).png);
   background-size: 65%;
   background-repeat: no-repeat;
@@ -992,39 +1018,44 @@ video {
 }
 
 
-.product_page #img{
+.product_page #img {
   padding: 15px;
   background: linear-gradient(to bottom, rgba(119, 136, 175, 0.733), transparent);
 }
-.product_page #img img{
+
+.product_page #img img {
   border-radius: 12px;
 }
 
-.product_page .main{
+.product_page .main {
   box-shadow: 0px 0px 50px rgba(240, 240, 240, 0.452);
 }
-#store #item_name{
- height: 20px;
- width:120px ;
- white-space: nowrap;
- text-overflow: ellipsis;
- overflow: hidden;
+
+#store #item_name {
+  height: 20px;
+  width: 120px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-#store div{
+
+#store div {
   display: flex;
   gap: 10px;
   background-color: #e5e7eb;
   border-radius: 4px;
   padding: 10px;
 }
-#store #status{
+
+#store #status {
   font-size: 12px;
 }
-#store{
+
+#store {
   box-shadow: 0px 0px 5px gray;
 }
 
-#loginform{
+#loginform {
   background-color: #00000091;
   backdrop-filter: blur(5px);
 }
