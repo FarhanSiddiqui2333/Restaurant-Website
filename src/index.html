@@ -1,0 +1,735 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+        * {
+            font-family: "Nunito", serif;
+        }
+    </style>
+    <title>Uncle's Resturent</title>
+</head>
+
+<body class="h-screen w-full m-0 p-0 box-border overflow-x-hidden">
+
+
+    <div class="hero h-full w-full overflow-hidden relative">
+        <div id="left_sec"
+            class="leftsec absolute h-auto rounded-md w-1/6 -left-full text-center font-semibold bg-white z-50 overflow-hidden transition-all">
+            <h3 class="h-12 bg-orange-500 place-content-center font-extrabold text-xl text-white"><i
+                    class="fa-solid fa-xmark absolute left-4 top-4" id="x"></i>
+                Item List</h3>
+            <ul id="list">
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="burger"
+                    onclick="getburger('item')"><a href="#container">Burger</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="pizza"
+                    onclick="getpizza('item')"><a href="#container">Pizza</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="pasta"
+                    onclick="getpasta('item')"><a href="#container">Pasta</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="cake"
+                    onclick="getcake('item')"><a href="#container">Cake</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="panCake"
+                    onclick="getpancake('item')"><a href="#container">Pizza</a>PanCake</li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="fishPie"
+                    onclick="getfishpie('item')"><a href="#container">Fish Pie</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="bread"
+                    onclick="getbread('item')"><a href="#container">Bread</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="fish"
+                    onclick="getfish('item')"><a href="#container">Fish</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="pie"
+                    onclick="getpie('item')"><a href="#container">Pie</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="sushi"
+                    onclick="getsushi('item')"><a href="#container">Sushi</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="egg"
+                    onclick="getegg('item')"><a href="#container">Firde Egg</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="roll"
+                    onclick="getroll('roll')"><a href="#container">Roll</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="dinner"
+                    onclick="getdinner('roll')"><a href="#container">Dinner</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="desert"
+                    onclick="getdesert('roll')"><a href="#container">Desert</a></li>
+                <li class="py-2 border-gray-300 border-b-2  transition-all hover:underline cursor-pointer" id="seeAll"
+                    onclick="getall('item')"><a href="#container">See All</a></li>
+            </ul>
+        </div>
+        <div class="head absolute z-10 flex w-2/4 items-center justify-between text-white py-3 px-16">
+            <div class="icon text-2xl pt-3">
+                <i class="fa-solid fa-bars" id="bar"></i>
+            </div>
+
+            <div class="login text-lg pt-3 flex gap-4 tracking-widest relative">
+                <i class="fa-solid fa-xmark absolute translate-x-2 text-white w-6 h-6 text-center place-content-center bg-black rounded-full z-30 translate-y-6 hidden" id="x2"></i>
+                <div id="store" class="hidden absolute translate-y-5 text-gray-500 flex flex-col w-64 gap-4
+                 bg-white overflow-scroll rounded-lg h-96 p-1">
+
+                </div>
+                <span id="count"
+                    class="hidden absolute right-full translate-x-10 -translate-y-3 bg-black rounded-full text-xs text-white text-center place-content-center h-5 w-5"></span>
+                <i class="fa-solid fa-cart-shopping" id="nav_cart">&nbsp;<span class="text-sm">CART</span></i>
+                <i class="fa-solid fa-circle-user" id="acc">&nbsp;<span class="text-sm">ACCOUNT</span></i>
+            </div>
+        </div>
+
+
+
+        <div class="content text-white w-1/2 pl-16 pr-5 h-full absolute place-content-center">
+            <div class="logo absolute -translate-y-1/4 -right-10 ">
+                <img src="logo.png" alt="" width="180px">
+            </div>
+            <div id="one">
+                <h2 class="h2 text-8xl font-black mb-4 overflow-hidden">
+                    <span>Pizza</span><span>Biryani</span><span>KFC</span><span>Chicken</span>
+                </h2>
+                <p>At ' Uncle Master Chef ', we believe that dining is not just about food – it’s about creating
+                    unforgettable experiences. From the moment you walk in, you’ll be greeted with warmth, exceptional
+                    service, and a menu crafted with the finest ingredients to bring you the most delicious flavors.
+                    Whether you're here for a casual meal or a special celebration, we promise a truly memorable
+                    experience that will keep you coming back for more.</p>
+                <h4 class="h-6 mt-5 transition-all overflow-hidden">
+                    <span class="block font-bold text-lg"><i class="fa-solid fa-hand-point-right text-sm"></i> Pizza
+                        Margerita</span>
+                    <span class="block font-bold text-lg"><i class="fa-solid fa-hand-point-right text-sm"></i> Frid
+                        Rice</span>
+                    <span class="block font-bold text-lg"><i class="fa-solid fa-hand-point-right text-sm"></i> Loaded
+                        KFC</span>
+                    <span class="block font-bold text-lg"><i class="fa-solid fa-hand-point-right text-sm"></i> Chicken
+                        Saled</span>
+
+                </h4>
+                <button class="bg-orange-500 px-5 py-2 rounded-lg font-bold mt-10"><a href="#container">Scroll Down</a></button>
+            </div>
+
+        </div>
+        <div class="slider relative rotate-45 ">
+            <img src="pizza.png" alt="" class="absolute -top-20 -right-20 h-80 w-96 rotate-180">
+            <img src="rice.png" alt="" class="absolute -top-20 -left-20 h-96 w-96">
+            <img src="chickenSeled.png" alt="" class="absolute -bottom-20 -right-20 h-96 w-96">
+            <img src="kfc.png" alt="" class="absolute -bottom-20 -left-20 h-96 w-96 -rotate-45">
+        </div>
+    </div>
+
+
+    <div class="search_sec flex flex-col text-center mt-10" id="search_sec">
+        <h2 class="text-2xl font-bold my-3">Search What You Want</h2>
+        <label
+            class="relative self-center h-10 w-80 bg-white shadow-md border-solid border-gray-200 border-2 flex items-center rounded-md overflow-hidden">
+            <input type="text" id="inp" placeholder="Search Food"
+                class="absolute w-3/4 h-full bg-transparent outline-none border-none py-1 px-4">
+            <button id="search_btn" onclick="getFood('item')"
+                class="w-1/4 h-full absolute right-0 bg-orange-500 border-none font-bold">Search</button>
+        </label>
+    </div>
+    <div class="resul pl-16 hidden" id="result_div">
+        <h2 class="text-lg font-semibold pt-5">Search Result :(<span id="result">0</span>)</h2>
+    </div>
+    <div id="container" class="w-full flex flex-wrap h-auto justify-center px-10 py-10 gap-4">
+
+    </div>
+
+
+
+
+    <div id="footer" class="flex w-full justify-around border-t border-b border-slate-300 py-5">
+        <ul class="text-xs leading-6">
+            <li class="font-extrabold">Fast Food</li>
+            <li>Burger</li>
+            <li>Pasta</li>
+            <li>Pizza</li>
+            <li>Roll</li>
+        </ul>
+        <ul class="text-xs leading-6">
+            <li class="font-extrabold">Sweet Dish</li>
+            <li>Sushi</li>
+            <li>Cream Cake</li>
+            <li>Sour Pork</li>
+            <li>Skillet Apple Pork Chop</li>
+        </ul>
+        <ul class="text-xs leading-6">
+            <li class="font-extrabold">Break Fast</li>
+            <li>Fruit & Cream</li>
+            <li>Boxy fruit</li>
+            <li>English Breakfast</li>
+            <li>Full English Breakfast</li>
+        </ul>
+        <ul class="text-xs leading-6">
+            <li class="font-extrabold">Dinner</li>
+            <li>Fruit Chart</li>
+            <li>Cream Pasta</li>
+            <li>Candle Light</li>
+            <li>Sushi</li>
+        </ul>
+    </div>
+    <div class="feedback w-auto h-80 bg-gray-900 py-10 px-10 flex items-end gap-2">
+        <textarea placeholder="Send Your Great Feedback to us!"
+            class="py-2 px-2 text-white w-1/3 bg-transparent border border-white rounded-lg h-full"></textarea>
+        <button class="bg-orange-600 text-white px-5 py-2 rounded-lg font-bold mt-10 h-max">Send</button>
+        <h2 class="text-5xl font-black w-full text-white text-center place-self-center">Send the Great Feedback <br> &
+            <br>Rate Us
+        </h2>
+    </div>
+    <div class="bottom flex w-full justify-between px-10 text-sm py-2">
+        <span>Copyright &copy; in 2025</span>
+        <span><i class="fa-solid fa-web-awesome text-amber-500"></i> Designer : <b>FARHAN ZAKIR</b></span>
+    </div>
+
+
+    <div id="product_page"
+        class="product_page h-screen w-full place-content-center place-items-center -right-full transition-all fixed top-0 z-20 bg-slate-900">
+        <span class="text-white text-lg font-extrabold absolute top-4 left-4" id="back">Back</span>
+        <img src="waiter.png" alt="" class="absolute h-60 translate-x-full bottom-0">
+        <div class="main w-1/4 h-auto border border-slate-600 bg-slate-900 rounded-lg overflow-hidden">
+            <div id="img" class="w-full text-center">
+                <img src="rice.png" id="prod_img" class="w-full">
+            </div>
+            <div id="name" class="border-t border-slate-300 bg-slate-900 py-4 px-4 relative">
+                <span id="prod_category" class="bg-white py-0.5 px-3 rounded font-bold">Spicy</span>
+                <span id="pord_name" class="text-3xl font-extrabold block my-3 text-white">Biryani</span>
+                <div class="limitor bg-white w-min flex rounded-md place-self-center">
+                    <button id="add" class="w-8 bg-orange-500 text-white font-bold rounded">+</button>
+                    <p id="limit_val" class="w-14 text-center font-bold p-1"></p>
+                    <button id="less" class="w-8 bg-orange-500 text-white font-bold rounded">-</button>
+                </div>
+                <img src="waiter.png" alt="" class="h-12 absolute left-2/4 bottom-4">
+                <button id="cart"
+                    class="bg-orange-500 px-5 py-2 rounded-lg font-extrabold mt-10 relative -right-full -translate-x-full">Order
+                    Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="loginform" class=" h-screen w-full fixed transition-all z-40 -top-full place-content-center place-items-center">
+        <i class="fa-solid fa-xmark absolute left-1/3 translate-x-2 pt-1 text-white" id="x3"></i>
+        <form class="bg-slate-900 border border-slate-800 w-2/6 h-56 rounded-lg flex flex-col justify-center gap-3 items-center">
+            <input id="inp1" type="email" placeholder="Enter Your Email" class="bg-transparent border-b border-white py-2 px-3 w-3/4 text-white outline-none">
+            <input id="inp2" type="password" placeholder="Enter Your Password" class="bg-transparent border-b border-white py-2 px-3 w-3/4 text-white outline-none">
+            <input type="submit" value="Login" id="submit" class="bg-orange-500 text-white font-extrabold py-2 px-5 rounded-md mt-3">
+        </form>
+    </div>
+    
+
+
+    <script>
+        let loginform = document.getElementById("loginform")
+        let account = document.getElementById("acc")
+        let inp1 = document.getElementById("inp1")
+        let inp2 = document.getElementById("inp2")
+        let x3 = document.getElementById("x3")
+        let sumit = document.getElementById("submit")
+        let nav_cart = document.getElementById("nav_cart")
+        let x2 = document.getElementById("x2")
+        let store = document.getElementById("store")
+        let cartBtn = document.getElementById("cart")
+        let product_page = document.getElementById("product_page")
+        let back = document.getElementById("back")
+        let pord_name = document.getElementById("pord_name")
+        let prod_category = document.getElementById("prod_category")
+        let prod_img = document.getElementById("prod_img")
+        let results = document.getElementById("result")
+        let result_div = document.getElementById("result_div")
+        let bar = document.getElementById("bar")
+        let left_sec = document.getElementById("left_sec")
+        let x = document.getElementById("x")
+        x.addEventListener("click", () => {
+            left_sec.style.left = "-100%"
+        })
+        bar.addEventListener("click", () => {
+            left_sec.style.left = "0%"
+        })
+        back.addEventListener("click", () => {
+            product_page.style.right = "-100%"
+        })
+
+        nav_cart.addEventListener("click",()=>{
+            store.style.display = "block"
+            x2.style.display = "block"
+        })
+        x2.addEventListener("click",()=>{
+            x2.style.display = "none"
+            store.style.display ="none"
+        })
+
+        account.addEventListener("click",()=>{
+            loginform.style.top = "0"
+        })
+        sumit.addEventListener("click",()=>{
+            loginform.style.top = "-100%"
+            inp1.value = ""
+            inp2.value =""
+        })
+        x3.addEventListener("click",()=>{
+            loginform.style.top = "-100%"
+            inp1.value = ""
+            inp2.value =""
+        })
+
+        {
+            let addBtn = document.getElementById("add")
+            let lessBtn = document.getElementById("less")
+            let limit_val = document.getElementById("limit_val")
+            let plus = 1;
+            let store = 1;
+            limit_val.textContent = store
+            addBtn.addEventListener("click", () => {
+                store = plus++;
+                limit_val.textContent = store
+            })
+            lessBtn.addEventListener("click", () => {
+                if (store >= 1) {
+                    plus = 1;
+                    store = store - 1;
+                    limit_val.textContent = store
+                }
+            })
+        }
+
+
+        let input = document.getElementById("inp")
+        let btn = document.getElementById("search_btn")
+        let parent = document.getElementById("container")
+
+        function default_con() {
+            parent.innerHTML = ""
+            let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=${input.value}`
+            fetch(api)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    data.meals.map(food => {
+                        parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                    })
+                })
+        }
+        default_con()
+
+
+        function getdish(img, cat, nam) {
+            prod_img.src = img
+            prod_category.innerHTML = cat
+            pord_name.innerHTML = nam
+            product_page.style.right = "0"
+            let playlist_counter = 0;
+            let count = document.getElementById("count")
+            cartBtn.addEventListener("click", () => {
+                store.innerHTML += `<div><span id="item_name">${nam}</span><span id="status"><i class="fa-solid fa-circle-check"></i> Placed</span></div>`
+                count.style.display = "block"
+                for (let i = 1; i < 2; i++) {
+                    playlist_counter = playlist_counter + i
+                    count.innerText = playlist_counter
+                }
+                product_page.style.right ="-100%"
+            })
+        }
+
+        function getFood(item) {
+            try {
+                if (input.value !== "") {
+                    result_div.style.display = "block"
+                    parent.innerHTML = ""
+                    let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=${input.value}`
+                    fetch(api)
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            data.meals.map(food => {
+                                results.innerHTML = data.meals.length
+                                parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                            })
+                        })
+                }
+            } catch (error) {
+                parent.innerHTML = "<h1>Result Don't Match</h1>"
+            }
+        }
+        input.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" && input.value.trim()) {
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=${input.value}`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+
+            }
+        })
+
+        {
+
+            function getall(item) {
+                input.value = ""
+                default_con()
+            }
+
+            function getburger(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=burger`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+            function getpizza(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=pizza`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getroll(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=roll`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+            function getdesert(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=sweet`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getdinner(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=spicy`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getfish(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=fish`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getpasta(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=pasta`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getcake(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=cake`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getpancake(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=pancake`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+            function getbread(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=bread`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getfishpie(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=fishpie`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getpie(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=pie`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+            function getegg(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=egg`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+
+            function getsushi(item) {
+                input.value = ""
+                result_div.style.display = "block"
+                parent.innerHTML = ""
+                let api = `https://www.themealdb.com/api/json/v1/1/search.php?s=sushi`
+                fetch(api)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        data.meals.map(food => {
+                            results.innerHTML = data.meals.length
+                            parent.innerHTML += `<div class="prod">
+                            <img src ='${food.strMealThumb}'>
+                            <div>
+                                <span>${food.strCategory}</span>
+                                <p>${food.strMeal}</p>
+                                <button onclick="getdish('${food.strMealThumb}','${food.strCategory}','${food.strMeal}')">Order Now</button>
+                            </div>
+                        </div>`
+                        })
+                    })
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
